@@ -458,7 +458,7 @@ Feature: Generate a distribution archive of a project
     And STDERR should be empty
     And the {RUN_DIR}/subdir/hello-world-dist.zip file should exist
 
-    When I try `echo "s" | wp dist-archive wp-content/plugins/hello-world ./subdir/hello-world-dist.zip`
+    When I run `echo "s" | wp dist-archive wp-content/plugins/hello-world ./subdir/hello-world-dist.zip`
     Then STDOUT should contain:
       """
       Archive generation skipped.

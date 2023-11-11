@@ -207,7 +207,7 @@ class Dist_Archive_Command {
 			if ( ! $should_overwrite ) {
 				WP_CLI::log( 'Skipping' . PHP_EOL );
 				WP_CLI::log( 'Archive generation skipped.' );
-				exit( 0 );
+				exit;
 			}
 			WP_CLI::log( 'Replacing' . PHP_EOL );
 		}
