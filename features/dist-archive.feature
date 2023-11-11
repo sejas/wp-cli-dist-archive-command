@@ -471,6 +471,10 @@ Feature: Generate a distribution archive of a project
       """
       Archive generation skipped.
       """
+    And STDOUT should not contain:
+      """
+      Success: Created hello-world-dist.zip
+      """
     And the {RUN_DIR}/subdir/hello-world-dist.zip file should exist
     And the return code should be 0
 
