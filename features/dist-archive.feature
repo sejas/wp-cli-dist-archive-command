@@ -459,7 +459,7 @@ Feature: Generate a distribution archive of a project
     And the {RUN_DIR}/subdir/hello-world-dist.zip file should exist
 
     When I run `echo "s" | wp dist-archive wp-content/plugins/hello-world ./subdir/hello-world-dist.zip`
-    Then STDERR should contain:
+    Then STDOUT should contain:
       """
-      Warning: File already exists
+      Archive generation skipped.
       """
