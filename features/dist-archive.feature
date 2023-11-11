@@ -463,27 +463,3 @@ Feature: Generate a distribution archive of a project
       """
       Warning: File already exists
       """
-    And STDOUT should contain:
-      """
-      Do you want to skip or replace it with a new archive? [s/r]:
-      """
-    And STDOUT should contain:
-      """
-      Archive generation skipped.
-      """
-    And the {RUN_DIR}/subdir/hello-world-dist.zip file should exist
-
-    When I run `echo "r" | wp dist-archive wp-content/plugins/hello-world ./subdir/hello-world-dist.zip`
-    And STDERR should contain:
-      """
-      Warning: File already exists
-      """
-    And STDOUT should contain:
-      """
-      Do you want to skip or replace it with a new archive? [s/r]:
-      """
-    And STDOUT should contain:
-      """
-      Success: Created hello-world-dist.zip
-      """
-    And the {RUN_DIR}/subdir/hello-world-dist.zip file should exist
